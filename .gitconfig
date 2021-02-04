@@ -1,0 +1,35 @@
+[alias]
+	pr = pull --rebase
+	a = add .
+	ca= commit --amend --no-edit
+	co = checkout
+	cm = commit -m
+	cb = checkout -b
+	ma = merge --abort
+	m = merge --no-ff 
+	ml = merge --no-ff -
+	mi = merge --no-ff origin/integration
+	ra = rebase --abort
+	rc = rebase --continue
+	c = commit
+	last = checkout -
+	s = !git add . && git stash
+	sp = stash pop
+	arc = !git add . && git rebase --continue
+	ac = !git add . && git commit
+	aca = !git add . && git commit --amend --no-edit
+	firstpush = push -u origin HEAD
+	cp = cherry-pick
+	acm = !git add . && git commit --no-edit
+	prot= pull --rebase origin testing
+	prom= pull --rebase origin master
+	prod= pull --rebase origin develop
+	# Creates a backup of the current branch:
+	#  - no param: branch => backup/branch
+	#  - param( name ): anyBranch => backup/name
+	backup = "!f() { branch=$([ $# -eq 0 ] && echo $(git rev-parse --abbrev-ref HEAD) || echo $1) && git checkout -b \"backup/$branch\" && git last;}; f"
+	# syncs the current branch with the existing branch on remote
+	# WARNING: it deletes all progress made locally
+	reset-hard= "!f() { branch=$(git rev-parse --abbrev-ref HEAD) && git last && git branch -D $branch && git fetch && git co \"$branch\";}; f"
+	
+
