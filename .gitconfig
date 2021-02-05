@@ -35,4 +35,5 @@
 	reset-hard= "!f() { branch=$(git rev-parse --abbrev-ref HEAD) && git last && git branch -D $branch && git fetch && git co \"$branch\";}; f"
     	# assumes that prettier is in the current project
 	prettier ="!f() { reference=$([ $# -eq 0 ] && echo 'HEAD~1' || echo $1); prettier --write $(git diff --name-only $reference | grep -E '.tsx?' | xargs);}; f"
+	prettier-current ="!f() { prettier --write $(git diff --name-only | grep -E '.tsx?' | xargs);}; f"
 
