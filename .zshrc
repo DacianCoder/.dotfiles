@@ -104,6 +104,10 @@ prompt_segment black default " "
 fi
 }
 
+export NVM_DIR="$HOME/.nvm"
+  [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
+  [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
+
 export PATH=/usr/local/share/npm/bin:$PATH.
 export PATH=$HOME/bin:/usr/local/lib/node_modules/yarn/bin:$PATH
 export PATH="$PATH:$(yarn global bin)"
@@ -111,3 +115,4 @@ export PATH="$PATH:$(yarn global bin)"
 #THIS MUST BE AT THE END OF THE FILE FOR SDKMAN TO WORK!!!
 export SDKMAN_DIR="/home/dacu-liber/.sdkman"
 [[ -s "/home/dacu-liber/.sdkman/bin/sdkman-init.sh" ]] && source "/home/dacu-liber/.sdkman/bin/sdkman-init.sh"
+

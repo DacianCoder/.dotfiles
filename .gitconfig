@@ -24,6 +24,8 @@
 	prot= pull --rebase origin testing
 	prom= pull --rebase origin master
 	prod= pull --rebase origin develop
+	# shows changes in last commits defaults to last commit
+	review = "!f() { reference=$([ $# -eq 0 ] && echo 1 || echo $1); git diff \"HEAD~$reference\";}; f"
 	# Creates a backup of the current branch:
 	#  - no param: branch => backup/branch
 	#  - param( name ): anyBranch => backup/name
@@ -31,5 +33,6 @@
 	# syncs the current branch with the existing branch on remote
 	# WARNING: it deletes all progress made locally
 	reset-hard= "!f() { branch=$(git rev-parse --abbrev-ref HEAD) && git last && git branch -D $branch && git fetch && git co \"$branch\";}; f"
-	
+    	# assumes that prettier is in the current project
+	prettier ="!f() { reference=$([ $# -eq 0 ] && echo 'HEAD~1' || echo $1); prettier --write $(git diff --name-only $reference | grep -E '.tsx?' | xargs);}; f"
 
