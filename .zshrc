@@ -113,6 +113,6 @@ export PATH=$HOME/bin:/usr/local/lib/node_modules/yarn/bin:$PATH
 export PATH="$PATH:$(yarn global bin)"
 
 #THIS MUST BE AT THE END OF THE FILE FOR SDKMAN TO WORK!!!
-export SDKMAN_DIR="/home/dacu-liber/.sdkman"
-[[ -s "/home/dacu-liber/.sdkman/bin/sdkman-init.sh" ]] && source "/home/dacu-liber/.sdkman/bin/sdkman-init.sh"
+export SDKMAN_DIR="$HOME/.sdkman"
+[[ -s "$HOME/.sdkman/bin/sdkman-init.sh" ]] && source "$HOME/.sdkman/bin/sdkman-init.sh"
 

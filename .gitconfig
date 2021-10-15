@@ -37,3 +37,8 @@
 	prettier ="!f() { reference=$([ $# -eq 0 ] && echo 'HEAD~1' || echo $1); prettier --write $(git diff --name-only $reference | grep -E '.tsx?' | xargs);}; f"
 	prettier-current ="!f() { prettier --write $(git diff --name-only | grep -E '.tsx?' | xargs);}; f"
 
+[user]
+	name = Cristian Boza
+	email = boza.cristian27@gmail.com
+[core]
+	autocrlf = input
