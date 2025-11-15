@@ -9,4 +9,5 @@ Create symlinks in the Home directory to the real files in the repo.
 # investigate install scripts and bootstrapping tools.
 
 ln -s ~/.dotfiles/.zshrc ~/.zshrc
+
 ln -s ~/.dotfiles/.gitconfig ~/.gitconfig
